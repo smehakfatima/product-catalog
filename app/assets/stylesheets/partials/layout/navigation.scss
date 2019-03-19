@@ -1,11 +1,6 @@
-.navbar-default, .navbar-toggle:focus, .collapsed, button.navbar-toggle {
-  background: $navbarColor !important;
-  border: none;
-  a {
-    color: white !important;
-  }
+body {
+ margin-top: 50px;
 }
-
 
 nav {
   .navbar-header {
@@ -19,5 +14,13 @@ nav {
     button:hover, .navbar-brand:hover {
       opacity: 0.8;
     }
+  }
+}
+
+.navbar-default, .navbar-toggle:focus, .collapsed, button.navbar-toggle {
+  background: $navbarColor !important;
+  border: none;
+  a {
+    color: white !important;
   }
 }
