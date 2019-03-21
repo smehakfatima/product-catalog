@@ -26,13 +26,13 @@ default: &default
 
 development:
   <<: *default
-  database: search_and_meet_development
+  database: products_catalog_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: search_and_meet
+  #username: products_catalog
 
   # The password associated with the postgres role (username).
   #password:
@@ -60,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: search_and_meet_test
+  database: products_catalog_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: search_and_meet_production
-  username: search_and_meet
-  password: <%= ENV['SEARCH_AND_MEET_DATABASE_PASSWORD'] %>
+  database: products_catalog_production
+  username: products_catalog
+  password: <%= ENV['products_catalog_DATABASE_PASSWORD'] %>
