@@ -6,4 +6,11 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#index'
+  resources :products do
+  collection do
+    get 'electronics'
+    get 'books'
+    get 'accessories'
+  end
+end
 end

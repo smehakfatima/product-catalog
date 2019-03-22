@@ -43,7 +43,7 @@ def seed_posts
   categories.each do |category|
     5.times do
       Product.create(
-        name: Faker::Lorem.sentences[0], 
+        name: Faker::Lorem.word, 
         description: Faker::Lorem.sentences[0], 
         user_id: rand(1..9), 
         category_id: category.id
