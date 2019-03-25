@@ -5,7 +5,8 @@ class Product < ApplicationRecord
   	default_scope -> { includes(:user).order(created_at: :desc) }
 
   	scope :by_category, -> (branch, category_name) do 
-	  joins(:category).where(categories: {name: category_name, branch: branch}) 
+	  joins(:category).where("categories.name = ? AND categories.branch = ?",category_name, branch)
+	  # .where(categories: {name: category_name, branch: branch}) 
 	end
 
 	scope :by_branch, -> (branch) do
@@ -13,6 +14,6 @@ class Product < ApplicationRecord
 	end
 
 	scope :search, -> (search) do
-	  where("name ILIKE lower(?) OR description ILIKE lower(?)", "%#{search}%", "%#{search}%")
+	  where("products.name ILIKE lower(?) OR products.description ILIKE lower(?)", "%#{search}%", "%#{search}%")
 	end
 end
