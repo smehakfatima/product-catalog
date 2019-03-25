@@ -30,5 +30,4 @@ class ProductsController < ApplicationController
       branch: params[:action]
     }).call
 	end
-
 end
