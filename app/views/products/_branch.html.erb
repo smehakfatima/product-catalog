@@ -1,0 +1,21 @@
+<div id="branch-main-content" class="container">
+  <div class="row">
+    <h1 class="page-title"><%= page_title %></h1>
+    <%= render 'products/branch/create_new_product', branch: branch %>
+  </div><!-- row -->
+
+  <div class="row">
+    <%= render 'products/branch/categories', branch: branch %>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12" id="feed">
+      <%= render @products %>
+      <%= render no_products_partial_path %>		
+    </div>
+  </div><!-- row -->	
+
+  <div class="infinite-scroll">
+    <%= will_paginate @products %>
+  </div>
+</div><!-- container -->

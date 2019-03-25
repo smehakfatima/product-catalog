@@ -25,15 +25,15 @@ def seed_categories
   accessories = ['Watches', 'Sun Glasses', 'Jewellery', 'Other']
 
   electronics.each do |name|
-    Category.create(branch: 'Electronics', name: name)
+    Category.create(branch: 'electronics', name: name)
   end
 
   books.each do |name|
-    Category.create(branch: 'Books', name: name)
+    Category.create(branch: 'books', name: name)
   end
 
   accessories.each do |name|
-    Category.create(branch: 'Accessories', name: name)
+    Category.create(branch: 'accessories', name: name)
   end
 end
 
