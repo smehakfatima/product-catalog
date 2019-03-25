@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 	
 	def index
-		 @products = Product.limit(5)
+		 @products = Product.limit(12)
   	end
 end

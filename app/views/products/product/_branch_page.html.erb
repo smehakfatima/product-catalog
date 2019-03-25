@@ -1,0 +1,9 @@
+<div class="single-product-list" id=<%= product_path(product.id) %>>
+  <%= truncate(product.name, :length => 60).capitalize %>
+  <div class="product-content">
+    <div class="producted-by">producted by <%= product.user.name %></div>
+    h3><%= product.name %></h3> 
+          <p><%= product.description %></p>
+    <%= link_to "I'm interested", product_path(product.id), class: 'interested' %> 
+  </div>
+</div>

@@ -37,7 +37,7 @@ def seed_categories
   end
 end
 
-def seed_posts
+def seed_products
   categories = Category.all
 
   categories.each do |category|
@@ -54,4 +54,4 @@ end
 
 seed_users
 seed_categories
-seed_posts
+seed_products

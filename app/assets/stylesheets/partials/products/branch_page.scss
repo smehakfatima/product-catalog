@@ -9,6 +9,7 @@
   overflow: hidden;
   &:hover {
     cursor: pointer;
+    background-color: $backgroundColor;
   }
 }
 
