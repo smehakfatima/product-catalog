@@ -13,6 +13,54 @@ RSpec.describe Product, type: :model do
     end
   end
 
+  context 'Validations' do
+    let(:product) { build(:product) }
+
+    it 'creates succesfully' do 
+      expect(product).to be_valid
+    end
+
+    it 'is not valid without a category' do 
+      product.category_id = nil
+      expect(product).not_to be_valid
+    end
+
+    it 'is not valid without a name' do 
+      product.name = nil
+      expect(product).not_to be_valid
+    end
+
+    it 'is not valid  without a user_id' do
+      product.user_id = nil
+      expect(product).not_to be_valid
+    end
+
+    it 'is not valid  with a name, shorter than 5 characters' do 
+      product.name = 'a' * 4
+      expect(product).not_to be_valid
+    end
+
+    it 'is not valid  with a name, longer than 255 characters' do 
+      product.name = 'a' * 260
+      expect(product).not_to be_valid
+    end
+
+    it 'is not valid without a content' do 
+      product.description = nil
+      expect(product).not_to be_valid
+    end
+
+    it 'is not valid  with a content, shorter than 20 characters' do 
+      product.description = 'a' * 10
+      expect(product).not_to be_valid
+    end
+
+    it 'is not valid  with a content, longer than 1000 characters' do 
+      product.description = 'a' * 1050
+      expect(product).not_to be_valid
+    end
+  end  
+
   context 'Scopes' do
     it 'default_scope orders by descending created_at' do
       first_product = create(:product)
