@@ -24,7 +24,11 @@ class ProductsController < ApplicationController
 	end
 
 	def get_products
-	  Product.limit(30)
+	  ProductsForBranchService.new({
+      search: params[:search],
+      category: params[:category],
+      branch: params[:action]
+    }).call
 	end
 
 end

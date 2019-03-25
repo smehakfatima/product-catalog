@@ -4,14 +4,15 @@ RSpec.describe ProductsHelper, type: :helper do
 
   context '#create_new_product_partial_path' do
     it "returns a signed_in partial's path" do
-      helper.stub(:user_signed_in?).and_return(true)
+      allow(helper).to receive(:user_signed_in?).and_return(true)
+
       expect(helper.create_new_product_partial_path). to (
         eq 'products/branch/create_new_product/signed_in'
       )
     end
 
     it "returns a signed_in partial's path" do
-      helper.stub(:user_signed_in?).and_return(false)
+      allow(helper).to receive(:user_signed_in?).and_return(false)
       expect(helper.create_new_product_partial_path). to (
         eq 'products/branch/create_new_product/not_signed_in'
       )

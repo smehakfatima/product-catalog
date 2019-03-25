@@ -18,4 +18,12 @@ module ProductsHelper
   def no_products_partial_path
   	@products.empty? ? 'products/branch/no_products' : 'shared/empty_partial'
   end
+
+  def category_field_partial_path
+    if params[:category].present?
+      'products/branch/search_form/category_field'
+    else
+      'shared/empty_partial'
+    end
+  end
 end
